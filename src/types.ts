@@ -27,6 +27,8 @@ type Endereco = {
 
 export type Cliente = {
     nome: string; 
+    id: number; 
+    email: string;
     cpf: string; 
     idade: number; 
     endereco: Endereco; 
