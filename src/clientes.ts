@@ -27,6 +27,20 @@ const clientes: Cliente[] = [{
         rua: "123", 
         numero: 22
     }
+} 
+{
+    nome: "Julia", 
+    id: 4, 
+    email: "Julia@gmail.com",
+    cpf: "111.111.111-11",
+    idade: 30, 
+    endereco: {
+        estado: "São Paulo", 
+        cidade: "Sorocaba", 
+        bairro: "Centro", 
+        rua: "11", 
+        numero: 111
+    }
 }
 ]
 
@@ -37,7 +51,7 @@ function cadastrarClientes(dadosDoCliente: Cliente) {
         console.log("Nome ou e-mail não informados!");
         return; 
     } else if (clienteExistente) {
-        console.log("Cliente já cadastrado!");
+        console.log("Id já cadastrado!");
         return; 
     } else if (emailExistente) {
         console.log("E-mail já utilizado!"); 

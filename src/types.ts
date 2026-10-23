@@ -17,6 +17,8 @@ export type Produto = {
     estoque: number;
 }
 
+export type DadosAtualizacaoProduto = Partial<Omit<Produto, "id">>;
+
 type Endereco = {
     estado: string;
     cidade: string; 
@@ -34,19 +36,20 @@ export type Cliente = {
     endereco: Endereco; 
 }
 
-type itemCarrinho = { 
+export type ItemCarrinho = { 
     produto: Produto; 
     quantidade: number; 
 }
 
-type Carrinho = {
-    itemCarrinho: itemCarrinho[]; 
+export type Carrinho = {
+    cliente: Cliente;
+    itemCarrinho: ItemCarrinho[]; 
 }
 
 type StatusPedido = "pendente" | "pago" | "enviado"
 
 type Pedido = {
-    carrinho: itemCarrinho[]; 
+    carrinho: ItemCarrinho[]; 
     cliente: Cliente; 
     numeroDoPedido: number; 
     statusPedido: StatusPedido; 
