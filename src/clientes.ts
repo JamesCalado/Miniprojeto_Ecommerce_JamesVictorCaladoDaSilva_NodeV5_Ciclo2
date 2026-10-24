@@ -27,7 +27,7 @@ const clientes: Cliente[] = [{
         rua: "123", 
         numero: 22
     }
-} 
+},
 {
     nome: "Julia", 
     id: 4, 
@@ -60,7 +60,6 @@ function cadastrarClientes(dadosDoCliente: Cliente) {
     clientes.push(dadosDoCliente); 
 }
 
-
 cadastrarClientes(
     {
     nome: "Felipe",
@@ -85,11 +84,14 @@ function mostrarClientes(clientes: Cliente[]) {
     });
 }
 
-mostrarClientes(clientes);
-
 function buscarCliente(clientes: Cliente[], id: number) {
     let clienteDesejado: Cliente | undefined = clientes.find(cliente => id === cliente.id);
     console.log(clienteDesejado);
 }
 
-buscarCliente(clientes, 3); 
+export = {
+  clientes,
+  cadastrarClientes,
+  mostrarClientes, 
+  buscarCliente
+};   

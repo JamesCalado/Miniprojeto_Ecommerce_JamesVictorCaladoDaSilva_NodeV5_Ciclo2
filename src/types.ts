@@ -1,4 +1,4 @@
-type Categoria = 
+export type Categoria = 
 "processador" | 
 "placa-mãe" | 
 "placa de vídeo" | 
@@ -19,7 +19,7 @@ export type Produto = {
 
 export type DadosAtualizacaoProduto = Partial<Omit<Produto, "id">>;
 
-type Endereco = {
+export type Endereco = {
     estado: string;
     cidade: string; 
     bairro: string; 
@@ -46,11 +46,19 @@ export type Carrinho = {
     itemCarrinho: ItemCarrinho[]; 
 }
 
-type StatusPedido = "pendente" | "pago" | "enviado"
+export type StatusPedido = "pendente" | "pago" | "enviado"
 
-type Pedido = {
+export type ItemPedido = {
+    produto: Produto; 
+    quantidade: number; 
+    precoUnitario: number; 
+}
+
+export type Pedido = {
     carrinho: ItemCarrinho[]; 
     cliente: Cliente; 
-    numeroDoPedido: number; 
+    idDoPedido: number; 
     statusPedido: StatusPedido; 
+    valorTotal: number; 
+    dataDoPedido: string; 
 }

@@ -124,5 +124,6 @@ function removerProduto(Produtos: Produto[], id: number) {
     console.log("Produto removido com sucesso!");
 }
 
-
+export = { Produtos, cadastrarProdutos, mostrarProdutosDisponiveis, buscarProdutoPeloId, buscarProdutoPeloNome,
+    filtrarProdutosPorCategoria, atualizarProduto, removerProduto}; 
 
